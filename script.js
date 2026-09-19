@@ -1,6 +1,19 @@
 let humanChoice = window.prompt("What's your choice?");
-let humanScore = 0;
-let compScore = 0;
+  let humanScore = 0;
+  let compScore = 0;
+
+
+function incrementHumanScore(){
+    humanScore++;
+    console.log("humanScore:", humanScore);
+}
+
+function incrementCompScore(){
+    compScore++;
+    console.log("compScore:", compScore);
+}   
+
+
 
 
 function getComputerChoice(){
@@ -27,8 +40,10 @@ function playRound(getComputerChoice, humanChoice){
       alert( "It is a tie!!");
     } else if (getComputerChoice === "paper") {
         alert ("The computer wins!");
+        incrementCompScore();
       } else {
         alert ("You win this game!");
+        incrementHumanScore();
       }
   }
   else if (humanChoice === "paper") {  
@@ -36,19 +51,24 @@ function playRound(getComputerChoice, humanChoice){
       alert ("It is a tie!!");
     } else if (getComputerChoice === "rock") {
         alert ("The computer wins!");
+        incrementCompScore();
       } else {
         alert ("You win this game!");
+        incrementHumanScore();
       }
   } else {
     if (getComputerChoice === "rock") {
       alert ("Computer wins!");
+        incrementCompScore();
   } else if (getComputerChoice === "paper") {
       alert ("You win!");
+        incrementHumanScore();
   } else {
       alert ("Draw!");
   }
   }
 
 }
+
 
 playRound(getComputerChoice(), humanChoice);
